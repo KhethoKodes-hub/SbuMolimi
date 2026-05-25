@@ -19,6 +19,158 @@
   .text-bg-primary { background: linear-gradient(135deg, #0a1f44 0%, #2e6da4 100%) !important; color: #fff !important; }
   .footer.bg-dark { background: linear-gradient(135deg, #0a1f44 0%, #1a1a2e 100%) !important; }
   .footer.bg-dark iconify-icon { color: #2e6da4 !important; }
+  /* ── Trusted Logos: hover lift + glow effect ── */
+.meet-team-img {
+  background: #fff;
+  border-radius: 8px;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              filter 0.35s ease;
+}
+.meet-team:hover .meet-team-img {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 20px 48px rgba(26, 58, 110, 0.22),
+              0 4px 16px rgba(46, 109, 164, 0.18);
+  filter: brightness(1.06) drop-shadow(0 0 12px rgba(46, 109, 164, 0.35));
+}
+.meet-team-img img {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.meet-team:hover .meet-team-img img {
+  transform: scale(1.08);
+}
+.meet-team-details {
+  transition: transform 0.3s ease;
+}
+.meet-team:hover .meet-team-details {
+  transform: translateY(-4px);
+}
+
+/* ── The man behind the mic: background image ── */
+.pricing-section {
+  position: relative;
+  background-image: url('../assets/images/Sbuassets/SbuTea.jpg') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-attachment: fixed !important;
+}
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 20, 50, 0.88) 0%,
+    rgba(10, 31, 68, 0.82) 40%,
+    rgba(5, 15, 35, 0.90) 100%
+  );
+  z-index: 0;
+}
+.pricing-section > .container {
+  position: relative;
+  z-index: 1;
+}
+.pricing-section .card {
+  background: rgba(255, 255, 255, 0.07) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #fff;
+}
+.pricing-section .card h5,
+.pricing-section .card h6,
+.pricing-section .card p,
+.pricing-section .card em {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.pricing-section .card .border-top {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.pricing-section h2.mb-0,
+.pricing-section p.fs-5 {
+  color: #fff !important;
+}
+.pricing-section .badge.text-bg-dark {
+  background: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+}
+/* Marquee strip stays readable */
+.pricing-section .marquee {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 12px 0;
+}
+
+/* ── Enhanced Client Logos ── */
+.client-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.client-logo-wrap.client-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.client-logo-wrap:nth-child(1) { transition-delay: 0.05s; }
+.client-logo-wrap:nth-child(2) { transition-delay: 0.15s; }
+.client-logo-wrap:nth-child(3) { transition-delay: 0.25s; }
+.client-logo-wrap:nth-child(4) { transition-delay: 0.35s; }
+.client-logo-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(26, 58, 110, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease,
+              background 0.3s ease;
+}
+.client-logo-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(26, 58, 110, 0.06) 0%, rgba(46, 109, 164, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.client-logo-wrap:hover .client-logo-img {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 24px 48px rgba(26, 58, 110, 0.15),
+              0 4px 16px rgba(46, 109, 164, 0.12);
+  border-color: rgba(46, 109, 164, 0.3);
+  background: rgba(26, 58, 110, 0.03);
+}
+.client-logo-wrap:hover .client-logo-img::after {
+  opacity: 1;
+}
+.client-logo-img img {
+  width: 72%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.65);
+  transition: filter 0.35s ease,
+              transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.client-logo-wrap:hover .client-logo-img img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.08);
+}
+.client-logo-details {
+  transition: transform 0.3s ease;
+}
+.client-logo-wrap:hover .client-logo-details {
+  transform: translateY(-3px);
+}
 </style>
 </head>
 
@@ -68,26 +220,11 @@
                           src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
                           class="img-fluid animate-spin">Events</a>
                     </li>
-                    <!--<li class="header-item">
-                      <a href="blog.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
-                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
-                          class="img-fluid animate-spin">Blog</a>
-                    </li>
-                    <li class="header-item">
-                      <a href="index.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
-                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
-                          class="img-fluid animate-spin">Services</a>
-                    </li>-->
                     <li class="header-item">
                       <a href="contact.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
                           src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
                           class="img-fluid animate-spin">Contact</a>
                     </li>
-                    <!--<li class="header-item">
-                      <a href="index.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
-                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
-                          class="img-fluid animate-spin">Book</a>
-                    </li>-->
                   </ul>
                   <div class="hstack gap-3">
                     <a href="tel:0720664925"
@@ -113,9 +250,6 @@
 
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end min-vh-100">
-      <!--<video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
-        <source src="../assets/images/backgrounds/sbumolimispevidd.mp4" type="video/mp4" />
-      </video>-->
 <div id="heroCarousel" class="carousel slide position-absolute top-0 start-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="5000">
   <div class="carousel-inner h-100">
     <div class="carousel-item active h-100">
@@ -131,9 +265,6 @@
             <div class="col-xl-4">
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-                <!--<img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
-                <p class="mb-0 text-white fs-5 text-opacity-70">Your <span
-                    class="text-primary">Pilot</span> — Master of Ceremony, Keynote Speaker &amp; Public Speaking Coach.</p>-->
               </div>
             </div>
           </div>
@@ -279,26 +410,6 @@
                 </div>
               </div>
             </div>
-            <!--<div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden">
-                  <img src="../assets/images/portfolio/portfolio-img-3.jpg" alt="" class="img-fluid">
-                  <div class="portfolio-overlay">
-                    <a href="projects-detail.html"
-                      class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                      <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3">
-                  <h3 class="mb-0">Annual Green Youth Indaba</h3>
-                  <div class="hstack gap-2">
-                    <span class="badge text-dark border">MC</span>
-                    <span class="badge text-dark border">Audience Engagement</span>
-                  </div>
-                </div>
-              </div>
-            </div>-->
             <div class="item">
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden">
@@ -319,26 +430,6 @@
                 </div>
               </div>
             </div>
-            <!--<div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden">
-                  <img src="../assets/images/portfolio/portfolio-img-5.jpg" alt="" class="img-fluid">
-                  <div class="portfolio-overlay">
-                    <a href="projects-detail.html"
-                      class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                      <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3">
-                  <h3 class="mb-0">Accounting Technician SA Graduation</h3>
-                  <div class="hstack gap-2">
-                    <span class="badge text-dark border">MC</span>
-                    <span class="badge text-dark border">Ceremony</span>
-                  </div>
-                </div>
-              </div>
-            </div>-->
             <div class="item">
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden">
@@ -451,7 +542,7 @@
                         <div class="col-lg-6 col-xxl-5">
                           <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
                             id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab"
-                            aria-controls="three" aria-selected="false">Public Speaking Coaching</button>
+                            aria-controls="three" aria-selected="false">Speech Coaching</button>
                         </div>
                         <div class="col-lg-6 col-xxl-7">
                           <p class="text-white text-opacity-70 mb-0">
@@ -491,238 +582,6 @@
       </div>
     </section>
 
-    <!--  Why choose us Section 
-    <section class="why-choose-us py-5 py-lg-11 py-xl-12">
-      <div class="container">
-        <div class="row justify-content-between gap-5 gap-xl-0">
-          <div class="col-xl-3 col-xxl-3">
-            <div class="d-flex flex-column gap-7">
-              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1000">
-                <span
-                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">04</span>
-                <hr class="border-line">
-                <span class="badge text-bg-dark">About</span>
-              </div>
-              <h2 class="mb-0" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Why book Sibusiso</h2>
-              <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">He combines over a decade of experience with an entrepreneurial mindset and streetwise wit—making every audience feel seen, heard, and inspired.</p>
-            </div>
-          </div>
-          <div class="col-xl-9 col-xxl-8">
-            <div class="row">
-              <div class="col-lg-4 mb-7 mb-lg-0">
-                <div class="card position-relative overflow-hidden bg-primary h-100" data-aos="fade-up"
-                  data-aos-delay="100" data-aos-duration="1000">
-                  <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="d-flex flex-column gap-3 position-relative z-1">
-                      <ul class="list-unstyled mb-0 hstack gap-1">
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-dark"></iconify-icon></a></li>
-                      </ul>
-                      <p class="mb-0 fs-6 text-dark">He was absolutely brilliant and there was never a dull moment at our function.</p>
-                    </div>
-                    <div class="position-relative z-1">
-                      <div class="pb-6 border-bottom">
-                        <h2 class="mb-0">100%</h2>
-                        <p class="mb-0">Client satisfaction</p>
-                      </div>
-                      <div class="hstack gap-6 pt-6">
-                        <img src="../assets/images/profile/avatar-1.png" alt=""
-                          class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="64" height="64">
-                        <div>
-                          <h5 class="mb-0">Tsakani Maluleke</h5>
-                          <p class="mb-0">Deputy Auditor General</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="position-absolute bottom-0 end-0">
-                      <img src="../assets/images/backgrounds/customer-satisfaction-bg.svg" alt="" class="img-fluid">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 mb-7 mb-lg-0">
-                <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                  <div class="position-relative">
-                    <img src="../assets/images/services/services-img-2.jpg" alt="" class="img-fluid w-100">
-                  </div>
-
-                  <div class="card bg-dark">
-                    <div class="card-body d-flex flex-column gap-7">
-                      <div>
-                        <h2 class="mb-0 text-white">8+</h2>
-                        <p class="mb-0 text-white text-opacity-70">Years engaging entrepreneurs &amp; young leaders nationwide</p>
-                      </div>
-                      <ul class="d-flex align-items-center mb-0">
-                        <li>
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-1.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-1">
-                          </a>
-                        </li>
-                        <li class="ms-n2">
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-2.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-2">
-                          </a>
-                        </li>
-                        <li class="ms-n2">
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-3.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-3">
-                          </a>
-                        </li>
-                        <li class="ms-n2">
-                          <a href="javascript:void(0)">
-                            <img src="../assets/images/profile/user-4.jpg" width="44" height="44"
-                              class="rounded-circle border border-2 border-dark" alt="user-4">
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 mb-7 mb-lg-0">
-                <div class="card border h-100 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="300"
-                  data-aos-duration="1000">
-                  <span
-                    class="border rounded-circle round-490 d-block position-absolute top-0 start-50 translate-middle"></span>
-                  <div class="card-body d-flex flex-column justify-content-between">
-                    <div>
-                      <h2 class="mb-0">15+</h2>
-                      <p class="mb-0 text-dark">Organisations spoken for across SA</p>
-                    </div>
-                    <div class="d-flex flex-column gap-3">
-                      <a href="index.html" class="logo-dark">
-                        <img src="../assets/images/logos/logo-dark.svg" alt="logo" class="img-fluid">
-                      </a>
-                      <p class="mb-0 fs-5 text-dark">From L'Oréal and Vodacom to the Department of Justice—Sibusiso's reach spans industries, audiences, and impact areas across the country.</p>
-                    </div>
-                  </div>
-                  <span
-                    class="border rounded-circle round-490 d-block position-absolute top-100 start-50 translate-middle"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
-
-    <!--  Testimonial Section 
-    <section class="testimonial py-5 py-lg-11 py-xl-12 bg-light-gray">
-      <div class="container">
-        <div class="d-flex flex-column gap-5 gap-xl-11">
-          <div class="row gap-7 gap-xl-0">
-            <div class="col-xl-4 col-xxl-4">
-              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1000">
-                <span
-                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">05</span>
-                <hr class="border-line bg-white">
-                <span class="badge text-bg-dark">Testimonials</span>
-              </div>
-            </div>
-            <div class="col-xl-8 col-xxl-7">
-              <div class="row">
-                <div class="col-xxl-8">
-                  <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="1000">
-                    <h2 class="mb-0">Stories from clients</h2>
-                    <p class="fs-5 mb-0 text-opacity-70">Real experiences from executives, directors, and organisers who have had Sibusiso on their stage.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row gap-7 gap-lg-0">
-            <div class="col-lg-4 col-xl-3 d-flex align-items-stretch">
-              <div class="card bg-primary w-100" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <div class="card-body d-flex flex-column gap-5 gap-xl-11 justify-content-between">
-                  <div class="d-flex flex-column gap-4">
-                    <p class="mb-0">Hear from them</p>
-                    <h4 class="mb-0">He is without a doubt the best Master of Ceremonies we have seen in action—young, dynamic, well-spoken, professional and very funny.</h4>
-                  </div>
-                  <div class="hstack gap-3">
-                    <img src="../assets/images/testimonial/testimonial-1.jpg" alt=""
-                      class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60">
-                    <div>
-                      <h5 class="mb-1 fw-normal">Phumzile Phatedi</h5>
-                      <p class="mb-0">Head of Marketing, Accounting Technician SA</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-xl-6 d-flex align-items-stretch">
-              <div class="card bg-dark w-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <div class="card-body d-flex flex-column gap-5 gap-xl-11 justify-content-between">
-                  <div class="d-flex flex-column gap-4">
-                    <p class="mb-0 text-white text-opacity-70">Hear from them</p>
-                    <h4 class="mb-0 text-white pe-xl-2">I wholeheartedly recommend Sibusiso Molimi for any role requiring exceptional talent, professionalism, and charisma. His performance has consistently exceeded our expectations.</h4>
-                    <div class="hstack gap-2">
-                      <ul class="list-unstyled mb-0 hstack gap-1">
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-white"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-white"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-white"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-white"></iconify-icon></a></li>
-                        <li><a class="hstack" href="javascript:void(0)"><iconify-icon icon="solar:star-bold"
-                              class="fs-6 text-white"></iconify-icon></a></li>
-                      </ul>
-                      <h6 class="mb-0 text-white fw-medium">5.0</h6>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="hstack gap-3">
-                      <img src="../assets/images/testimonial/testimonial-2.jpg" alt=""
-                        class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60">
-                      <div>
-                        <h5 class="mb-1 fw-normal text-white">Dr. Roche Mamabolo</h5>
-                        <p class="mb-0 text-white text-opacity-70">Director, Lora Centre for Innovation &amp; Entrepreneurship</p>
-                      </div>
-                    </div>
-                    <span><img src="../assets/images/testimonial/quete.svg" alt="quete"
-                        class="img-fluid flex-shrink-0"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-xl-3 d-flex align-items-stretch">
-              <div class="card w-100" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                <div class="card-body d-flex flex-column gap-5 gap-xl-11 justify-content-between">
-                  <div class="d-flex flex-column gap-4">
-                    <p class="mb-0">Hear from them</p>
-                    <h4 class="mb-0">You understand your audience and customise your engagements to suit them. It's a pleasure to journey with you as we impact one township at a time.</h4>
-                  </div>
-                  <div class="hstack gap-3">
-                    <img src="../assets/images/testimonial/testimonial-3.jpg" alt=""
-                      class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60">
-                    <div>
-                      <h5 class="mb-1 fw-normal">Lizzy Mogale</h5>
-                      <p class="mb-0">Managing Executive, Nedbank</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
-
     <!--  Clients Section (replacing Meet our team) -->
     <section class="meet-our-team py-5 py-lg-11 py-xl-12">
       <div class="container">
@@ -749,72 +608,56 @@
               </div>
             </div>
           </div>
-          <div class="row">
+
+          <!-- Enhanced client logos row -->
+          <div class="row" id="clientLogosRow">
             <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
-              <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="100"
-                data-aos-duration="1000">
-                <div class="meet-team-img position-relative overflow-hidden">
-                  <img src="../assets/images/Sbuassets/nxtgenlogo.webp" alt="team-img" class="img-fluid w-100">
-                  <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
-                    <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
-                      
-                  </div>
+              <div class="client-logo-wrap">
+                <div class="client-logo-img">
+                  <img src="../assets/images/Sbuassets/nxtgenlogo.webp" alt="Vodacom NXT LVL">
                 </div>
-                <div class="meet-team-details">
+                <div class="client-logo-details">
                   <h4 class="mb-0">Vodacom</h4>
                   <p class="mb-0">NXT LVL 2.0 Careers Expo</p>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
-              <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <div class="meet-team-img position-relative overflow-hidden">
-                  <img src="../assets/images/Sbuassets/nedbanklogo.svg" alt="team-img" class="img-fluid w-100">
-                  <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
-                    <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
-                      
-                  </div>
+              <div class="client-logo-wrap">
+                <div class="client-logo-img">
+                  <img src="../assets/images/Sbuassets/nedbanklogo.svg" alt="Nedbank">
                 </div>
-                <div class="meet-team-details">
+                <div class="client-logo-details">
                   <h4 class="mb-0">Nedbank</h4>
                   <p class="mb-0">Township Entrepreneurs Alliance</p>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
-              <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="300"
-                data-aos-duration="1000">
-                <div class="meet-team-img position-relative overflow-hidden">
-                  <img src="../assets/images/Sbuassets/LOreal-Logo.png" alt="team-img" class="img-fluid w-100">
-                  <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
-                    <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
-                     
-                  </div>
+              <div class="client-logo-wrap">
+                <div class="client-logo-img">
+                  <img src="../assets/images/Sbuassets/LOreal-Logo.png" alt="L'Oréal South Africa">
                 </div>
-                <div class="meet-team-details">
+                <div class="client-logo-details">
                   <h4 class="mb-0">L'Oréal South Africa</h4>
                   <p class="mb-0">Keynote Speaker</p>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
-              <div class="meet-team d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="400"
-                data-aos-duration="1000">
-                <div class="meet-team-img position-relative overflow-hidden">
-                  <img src="../assets/images/Sbuassets/dojlogo.jpg" alt="team-img" class="img-fluid w-100">
-                  <div class="meet-team-overlay p-7 d-flex flex-column justify-content-end">
-                    <ul class="social list-unstyled mb-0 hstack gap-2 justify-content-end">
-                     
-                  </div>
+              <div class="client-logo-wrap">
+                <div class="client-logo-img">
+                  <img src="../assets/images/Sbuassets/dojlogo.jpg" alt="Dept. of Justice &amp; Constitutional Development">
                 </div>
-                <div class="meet-team-details">
+                <div class="client-logo-details">
                   <h4 class="mb-0">Dept. of Justice &amp; Constitutional Development</h4>
                   <p class="mb-0">Keynote Speaker</p>
                 </div>
               </div>
             </div>
           </div>
+          <!-- End enhanced client logos row -->
+
         </div>
       </div>
     </section>
@@ -1301,6 +1144,24 @@
   <script src="../assets/js/custom.js"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+  <!-- Client logos scroll-in animation -->
+  <script>
+    (function () {
+      var items = document.querySelectorAll('#clientLogosRow .client-logo-wrap');
+      if (!items.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('client-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
 </body>
 
 </html>
