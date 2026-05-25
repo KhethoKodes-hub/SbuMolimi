@@ -53,12 +53,20 @@
     text-transform: uppercase;
   }
   .marquee-item:last-child { border-right: none; }
+  .marquee-logo-img {
+    width: 80px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+  }
+  /* Fallback icon — shown only if image fails to load */
   .marquee-logo-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, #0a1f44 0%, #2e6da4 100%);
-    display: flex;
+    display: none; /* hidden by default; swap to flex if img onerror */
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -143,10 +151,50 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
   }
-  .article-card-img-placeholder iconify-icon {
-    font-size: 48px;
-    color: rgba(255,255,255,0.3);
+  /* subtle diagonal texture */
+  .article-card-img-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  }
+  .article-placeholder-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .article-placeholder-icon-ring {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .article-placeholder-inner iconify-icon {
+    font-size: 26px;
+    color: rgba(255,255,255,0.75);
+  }
+  .article-placeholder-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
   }
   .article-card-body {
     padding: 24px;
@@ -231,6 +279,19 @@
     cursor: pointer;
     overflow: hidden;
   }
+  /* subtle diagonal texture for video too */
+  .video-thumb-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  }
   .video-thumb-wrap iframe {
     position: absolute;
     top: 0; left: 0;
@@ -251,13 +312,29 @@
     border: 2px solid rgba(255,255,255,0.4);
     pointer-events: none;
     transition: background 0.2s;
+    z-index: 2;
   }
   .video-thumb-wrap:hover .video-play-overlay {
     background: rgba(255,255,255,0.25);
   }
   .video-thumb-placeholder-icon {
     font-size: 52px;
-    color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.12);
+    position: relative;
+    z-index: 1;
+  }
+  .video-placeholder-label {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    white-space: nowrap;
+    z-index: 2;
   }
   .video-card-body {
     padding: 20px 24px;
@@ -397,53 +474,57 @@
       <div class="marquee-track" id="marqueeTrack">
         <!-- Set 1 -->
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/mpowayouth-logo.png" alt="Mpowa Youth" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>MY</span></div>
-          Mpowa Youth
+          
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/miningsummit-logo.png" alt="Youth Annual Mining Summit" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>MS</span></div>
-          Youth Annual Mining Summit
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/vodacomlogo.png" alt="Vodacom" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>V</span></div>
-          Vodacom
+          
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/TEALogo.jpg" alt="Township Entrepreneurs Alliance" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>TE</span></div>
-          Township Entrepreneurs Alliance
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/agsa-logo.png" alt="Auditor-General Awards" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>AG</span></div>
-          Auditor-General Awards
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/stpeterslogo.png" alt="St Peters Prep" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>SP</span></div>
-          St Peters Prep
         </div>
         <!-- Set 2 — duplicate for seamless loop -->
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/mpowayouth-logo.png" alt="Mpowa Youth" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>MY</span></div>
-          Mpowa Youth
+          
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/miningsummit-logo.png" alt="Youth Annual Mining Summit" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>MS</span></div>
-          Youth Annual Mining Summit
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/vodacomlogo.png" alt="Vodacom" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>V</span></div>
-          Vodacom
+         
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/TEALogo.jpg" alt="Township Entrepreneurs Alliance" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>TE</span></div>
-          Township Entrepreneurs Alliance
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/agsa-logo.png" alt="Auditor-General Awards" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>AG</span></div>
-          Auditor-General Awards
         </div>
         <div class="marquee-item">
+          <img src="../assets/images/Sbuassets/stpeterslogo.png" alt="St Peters Prep" class="marquee-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="marquee-logo-icon"><span>SP</span></div>
-          St Peters Prep
         </div>
       </div>
     </section>
@@ -500,7 +581,7 @@
             <div class="portfolio d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="400"
               data-aos-duration="1000">
               <div class="portfolio-img position-relative overflow-hidden">
-                <img src="../assets/images/Sbuassets/vodacomnxtlvl.png" alt="" class="img-fluid w-100">
+                <img src="../assets/images/Sbuassets/vodacomnxtlvl22.png" alt="" class="img-fluid w-100">
                 <div class="portfolio-overlay">
                   <a href=""
                     class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -608,7 +689,12 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
             <div class="article-card">
               <div class="article-card-img-placeholder">
-                <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                <div class="article-placeholder-inner">
+                  <div class="article-placeholder-icon-ring">
+                    <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                  </div>
+                  <span class="article-placeholder-label">Article Image</span>
+                </div>
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Youth &amp; Leadership</span>
@@ -624,7 +710,12 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
             <div class="article-card">
               <div class="article-card-img-placeholder">
-                <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                <div class="article-placeholder-inner">
+                  <div class="article-placeholder-icon-ring">
+                    <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                  </div>
+                  <span class="article-placeholder-label">Article Image</span>
+                </div>
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Entrepreneurship</span>
@@ -640,7 +731,12 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
             <div class="article-card">
               <div class="article-card-img-placeholder">
-                <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                <div class="article-placeholder-inner">
+                  <div class="article-placeholder-icon-ring">
+                    <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                  </div>
+                  <span class="article-placeholder-label">Article Image</span>
+                </div>
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Corporate</span>
@@ -665,6 +761,7 @@
                 <div class="video-play-overlay">
                   <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
                 </div>
+                <span class="video-placeholder-label">Video Thumbnail</span>
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Keynote</span>
@@ -684,6 +781,7 @@
                 <div class="video-play-overlay">
                   <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
                 </div>
+                <span class="video-placeholder-label">Video Thumbnail</span>
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Panel</span>
@@ -703,6 +801,7 @@
                 <div class="video-play-overlay">
                   <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
                 </div>
+                <span class="video-placeholder-label">Video Thumbnail</span>
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Summit</span>
@@ -722,7 +821,14 @@
           <!-- Articles -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
             <div class="article-card">
-              <div class="article-card-img-placeholder"><iconify-icon icon="lucide:newspaper"></iconify-icon></div>
+              <div class="article-card-img-placeholder">
+                <div class="article-placeholder-inner">
+                  <div class="article-placeholder-icon-ring">
+                    <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                  </div>
+                  <span class="article-placeholder-label">Article Image</span>
+                </div>
+              </div>
               <div class="article-card-body">
                 <span class="article-tag">Youth &amp; Leadership</span>
                 <!--<h4 class="article-card-title">Add your article title here</h4>
@@ -736,7 +842,14 @@
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
             <div class="article-card">
-              <div class="article-card-img-placeholder"><iconify-icon icon="lucide:newspaper"></iconify-icon></div>
+              <div class="article-card-img-placeholder">
+                <div class="article-placeholder-inner">
+                  <div class="article-placeholder-icon-ring">
+                    <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                  </div>
+                  <span class="article-placeholder-label">Article Image</span>
+                </div>
+              </div>
               <div class="article-card-body">
                 <span class="article-tag">Entrepreneurship</span>
                 <!--<h4 class="article-card-title">Add your article title here</h4>
@@ -756,6 +869,7 @@
                 <div class="video-play-overlay">
                   <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
                 </div>
+                <span class="video-placeholder-label">Video Thumbnail</span>
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Keynote</span>
@@ -772,6 +886,7 @@
                 <div class="video-play-overlay">
                   <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
                 </div>
+                <span class="video-placeholder-label">Video Thumbnail</span>
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Panel</span>
@@ -783,7 +898,14 @@
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
             <div class="article-card">
-              <div class="article-card-img-placeholder"><iconify-icon icon="lucide:newspaper"></iconify-icon></div>
+              <div class="article-card-img-placeholder">
+                <div class="article-placeholder-inner">
+                  <div class="article-placeholder-icon-ring">
+                    <iconify-icon icon="lucide:newspaper"></iconify-icon>
+                  </div>
+                  <span class="article-placeholder-label">Article Image</span>
+                </div>
+              </div>
               <div class="article-card-body">
                 <span class="article-tag">Corporate</span>
                 <!--<h4 class="article-card-title">Add your article title here</h4>
@@ -802,6 +924,7 @@
                 <div class="video-play-overlay">
                   <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
                 </div>
+                <span class="video-placeholder-label">Video Thumbnail</span>
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Summit</span>
