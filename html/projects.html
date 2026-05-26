@@ -681,7 +681,7 @@
         <div class="media-tab-btns" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
           <button class="media-tab-btn active" onclick="switchTab('articles', this)">Articles</button>
           <button class="media-tab-btn" onclick="switchTab('videos', this)">Videos</button>
-          <button class="media-tab-btn" onclick="switchTab('all', this)">All</button>
+          <!--<button class="media-tab-btn" onclick="switchTab('all', this)">All</button>-->
         </div>
 
         <!-- Articles grid -->
@@ -693,21 +693,21 @@
                   <div class="article-placeholder-icon-ring">
                     <iconify-icon icon="lucide:newspaper"></iconify-icon>
                   </div>
-                  <span class="article-placeholder-label">Article Image</span>
+                  <span class="article-placeholder-label"><img src="../assets/images/Sbuassets/MAG2.png" alt="Article Image" class="img-fluid"></span>
                 </div>
               </div>
               <div class="article-card-body">
-                <span class="article-tag">Youth &amp; Leadership</span>
+                <span class="article-tag"><!--Youth &amp; Leadership-->STARTUP MAG</span>
                 <!--<h4 class="article-card-title">Add your article title here</h4>-->
                 <!--<p class="article-card-excerpt">Paste a short excerpt or description of the article here. Update the link below to point to the full article.</p>-->
                 <div class="article-card-footer">
-                  <span class="article-date">Date</span>
-                  <a href="#" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
+                  <span class="article-date">January 28, 2026</span>
+                  <a href="https://startupmag.co.za/2026/01/soweto-classrooms-to-boardroom-stages-the-rise-of-ayeye-consulting/" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+          <!--<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
             <div class="article-card">
               <div class="article-card-img-placeholder">
                 <div class="article-placeholder-inner">
@@ -719,8 +719,8 @@
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Entrepreneurship</span>
-                <!--<h4 class="article-card-title">Add your article title here</h4>-->
-                <!--<p class="article-card-excerpt">Paste a short excerpt or description of the article here. Update the link below to point to the full article.</p>-->
+                <h4 class="article-card-title">Add your article title here</h4>
+                <p class="article-card-excerpt">Paste a short excerpt or description of the article here. Update the link below to point to the full article.</p>
                 <div class="article-card-footer">
                   <span class="article-date">Date</span>
                   <a href="#" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
@@ -740,85 +740,80 @@
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Corporate</span>
-               <!---<h4 class="article-card-title">Add your article title here</h4>-->
-                <!--<p class="article-card-excerpt">Paste a short excerpt or description of the article here. Update the link below to point to the full article.</p>-->
+               <h4 class="article-card-title">Add your article title here</h4>
+                <p class="article-card-excerpt">Paste a short excerpt or description of the article here. Update the link below to point to the full article.</p>
                 <div class="article-card-footer">
                   <span class="article-date">Date</span>
                   <a href="#" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
                 </div>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
 
-        <!-- Videos grid -->
-        <div id="tab-videos" class="row g-4" style="display:none;">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-            <div class="video-card">
-              <div class="video-thumb-wrap">
-                <!-- Replace src with your YouTube embed URL e.g. https://www.youtube.com/embed/VIDEO_ID -->
-                <iconify-icon icon="lucide:video" class="video-thumb-placeholder-icon"></iconify-icon>
-                <div class="video-play-overlay">
-                  <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
-                </div>
-                <span class="video-placeholder-label">Video Thumbnail</span>
-              </div>
-              <div class="video-card-body">
-                <span class="article-tag">Keynote</span>
-                <!--<h4 class="video-card-title">Add your video title here</h4>-->
-                <!--<p class="video-card-desc">Brief description of the video. Replace the placeholder above with an iframe embed from YouTube or Vimeo.</p>-->
-                <div class="video-meta">
-                  <iconify-icon icon="lucide:clock"></iconify-icon>
-                  Duration &nbsp;·&nbsp; Event name
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-            <div class="video-card">
-              <div class="video-thumb-wrap">
-                <iconify-icon icon="lucide:video" class="video-thumb-placeholder-icon"></iconify-icon>
-                <div class="video-play-overlay">
-                  <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
-                </div>
-                <span class="video-placeholder-label">Video Thumbnail</span>
-              </div>
-              <div class="video-card-body">
-                <span class="article-tag">Panel</span>
-                <!--<h4 class="video-card-title">Add your video title here</h4>-->
-                <!--<p class="video-card-desc">Brief description of the video. Replace the placeholder above with an iframe embed from YouTube or Vimeo.</p>-->
-                <div class="video-meta">
-                  <iconify-icon icon="lucide:clock"></iconify-icon>
-                  Duration &nbsp;·&nbsp; Event name
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-            <div class="video-card">
-              <div class="video-thumb-wrap">
-                <iconify-icon icon="lucide:video" class="video-thumb-placeholder-icon"></iconify-icon>
-                <div class="video-play-overlay">
-                  <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
-                </div>
-                <span class="video-placeholder-label">Video Thumbnail</span>
-              </div>
-              <div class="video-card-body">
-                <span class="article-tag">Summit</span>
-                <!--<h4 class="video-card-title">Add your video title here</h4>-->
-                <!--<p class="video-card-desc">Brief description of the video. Replace the placeholder above with an iframe embed from YouTube or Vimeo.</p>-->
-                <div class="video-meta">
-                  <iconify-icon icon="lucide:clock"></iconify-icon>
-                  Duration &nbsp;·&nbsp; Event name
-                </div>
-              </div>
-            </div>
-          </div>
+      <div id="tab-videos" class="row g-4" style="display:none;">
+  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+    <div class="video-card">
+      <div class="video-thumb-wrap">
+        <!-- REPLACED with actual YouTube embed -->
+        <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=GXS_eTC4g4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-play-overlay">
+          <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
         </div>
+        <span class="video-placeholder-label"><img src="" alt="Video Thumbnail" class="img-fluid"></span>
+      </div>
+      <div class="video-card-body">
+        <span class="article-tag">Keynote</span>
+        <div class="video-meta">
+          <iconify-icon icon="lucide:clock"></iconify-icon>
+          45:22 &nbsp;·&nbsp; Tech Conference 2024
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- All grid -->
+  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+    <div class="video-card">
+      <div class="video-thumb-wrap">
+        <!-- REPLACED with actual Vimeo embed -->
+        <iframe src="https://www.youtube.com/watch?v=qWik4iuxPg4" width="100%" height="200" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-play-overlay">
+          <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
+        </div>
+        <span class="video-placeholder-label"><img src="" alt="Video Thumbnail" class="img-fluid"> </span>
+      </div>
+      <div class="video-card-body">
+        <span class="article-tag">Panel</span>
+        <div class="video-meta">
+          <iconify-icon icon="lucide:clock"></iconify-icon>
+          1:12:03 &nbsp;·&nbsp; Design Summit 2025
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+    <div class="video-card">
+      <div class="video-thumb-wrap">
+        <!-- REPLACED with another YouTube embed -->
+        <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=cIMhugnCSA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-play-overlay">
+          <iconify-icon icon="lucide:play" style="color:#fff; font-size:24px; margin-left:3px;"></iconify-icon>
+        </div>
+        <span class="video-placeholder-label"><img src="" alt="Video Thumbnail" class="img-fluid"></span>
+      </div>
+      <div class="video-card-body">
+        <span class="article-tag">Summit</span>
+        <div class="video-meta">
+          <iconify-icon icon="lucide:clock"></iconify-icon>
+          28:15 &nbsp;·&nbsp; Global Summit 2025
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- All grid 
         <div id="tab-all" class="row g-4" style="display:none;">
-          <!-- Articles -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
             <div class="article-card">
               <div class="article-card-img-placeholder">
@@ -831,8 +826,8 @@
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Youth &amp; Leadership</span>
-                <!--<h4 class="article-card-title">Add your article title here</h4>
-                <p class="article-card-excerpt">Paste a short excerpt or description of the article here.</p>-->
+                <h4 class="article-card-title">Add your article title here</h4>
+                <p class="article-card-excerpt">Paste a short excerpt or description of the article here.</p>
                 <div class="article-card-footer">
                   <span class="article-date">Date</span>
                   <a href="#" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
@@ -847,13 +842,13 @@
                   <div class="article-placeholder-icon-ring">
                     <iconify-icon icon="lucide:newspaper"></iconify-icon>
                   </div>
-                  <span class="article-placeholder-label">Article Image</span>
+                  <span class="article-placeholder-label"><img src="../assets/images/Sbuassets/mindset.jpeg" alt="Article Image" class="img-fluid"></span>
                 </div>
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Entrepreneurship</span>
-                <!--<h4 class="article-card-title">Add your article title here</h4>
-                <p class="article-card-excerpt">Paste a short excerpt or description of the article here.</p>-->
+                <h4 class="article-card-title">Add your article title here</h4>
+                <p class="article-card-excerpt">Paste a short excerpt or description of the article here.</p>
                 <div class="article-card-footer">
                   <span class="article-date">Date</span>
                   <a href="#" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
@@ -861,7 +856,7 @@
               </div>
             </div>
           </div>
-          <!-- Videos -->
+           Videos 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
             <div class="video-card">
               <div class="video-thumb-wrap">
@@ -873,8 +868,8 @@
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Keynote</span>
-                <!--<h4 class="video-card-title">Add your video title here</h4>
-                <p class="video-card-desc">Brief description of the video. Replace the placeholder with an iframe embed.</p>-->
+              <h4 class="video-card-title">Add your video title here</h4>
+                <p class="video-card-desc">Brief description of the video. Replace the placeholder with an iframe embed.</p>
                 <div class="video-meta"><iconify-icon icon="lucide:clock"></iconify-icon> Duration &nbsp;·&nbsp; Event name</div>
               </div>
             </div>
@@ -890,8 +885,8 @@
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Panel</span>
-                <!--<h4 class="video-card-title">Add your video title here</h4>
-                <p class="video-card-desc">Brief description of the video. Replace the placeholder with an iframe embed.</p>-->
+                <h4 class="video-card-title">Add your video title here</h4>
+                <p class="video-card-desc">Brief description of the video. Replace the placeholder with an iframe embed.</p>
                 <div class="video-meta"><iconify-icon icon="lucide:clock"></iconify-icon> Duration &nbsp;·&nbsp; Event name</div>
               </div>
             </div>
@@ -908,8 +903,8 @@
               </div>
               <div class="article-card-body">
                 <span class="article-tag">Corporate</span>
-                <!--<h4 class="article-card-title">Add your article title here</h4>
-                <p class="article-card-excerpt">Paste a short excerpt or description of the article here.</p>-->
+                <h4 class="article-card-title">Add your article title here</h4>
+                <p class="article-card-excerpt">Paste a short excerpt or description of the article here.</p>
                 <div class="article-card-footer">
                   <span class="article-date">Date</span>
                   <a href="#" class="article-read-link">Read more <iconify-icon icon="lucide:arrow-up-right"></iconify-icon></a>
@@ -928,9 +923,9 @@
               </div>
               <div class="video-card-body">
                 <span class="article-tag">Summit</span>
-                <!--<h4 class="video-card-title">Add your video title here</h4>
-                <p class="video-card-desc">Brief description of the video. Replace the placeholder with an iframe embed.</p>-->
-                <div class="video-meta"><iconify-icon icon="lucide:clock"></iconify-icon> Duration &nbsp;·&nbsp; Event name</div>
+                <h4 class="video-card-title">Add your video title here</h4>
+                <p class="video-card-desc">Brief description of the video. Replace the placeholder with an iframe embed.</p>
+                <div class="video-meta"><iconify-icon icon="lucide:clock"></iconify-icon> Duration &nbsp;·&nbsp; Event name</div>-->
               </div>
             </div>
           </div>
@@ -950,7 +945,7 @@
             <div class="d-flex flex-column gap-2">
               <a href="mailto:sibusisomolimi@gmail.com" class="link-hover hstack gap-3 text-white fs-5">
                 <iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary" style="color: white !important;"></iconify-icon>
-               sibusisomolimi@gmail.com
+                sibusiso@tsoha-ed.co.za 
               </a>
               <a href="tel:0720664925" class="link-hover hstack gap-3 text-white fs-5">
                 <iconify-icon icon="lucide:phone" class="fs-7 text-primary" style="color: white !important;"></iconify-icon>
@@ -963,7 +958,7 @@
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
             <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-            <li><a class="link-hover fs-5 text-white" href="projects.html">Events</a></li>
+            <li><a class="link-hover fs-5 text-white" href="projects.html">Trusted Partners</a></li>
           </ul>
         </div>
         <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">

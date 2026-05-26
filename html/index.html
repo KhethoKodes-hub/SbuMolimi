@@ -1035,7 +1035,7 @@
       </div>
     </section>
 
-    <!--  Get in touch Section -->
+    <!--  Get in touch Section - UPDATED with FormSubmit.co -->
     <section class="get-in-touch py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-10">
@@ -1065,18 +1065,26 @@
               <p class="mb-0 fs-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">Ready to elevate your next event? Tell Sibusiso about your function and let's create an unforgettable experience together.</p>
             </div>
             <div class="col-xl-8">
-              <form class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <!-- FormSubmit.co Integration - sends to sibusiso@tsoha-ed.co.za -->
+              <form class="d-flex flex-column gap-7" action="https://formsubmit.co/sibusiso@tsoha-ed.co.za" method="POST" enctype="multipart/form-data" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <!-- FormSubmit.co configuration -->
+                <input type="hidden" name="_subject" value="Sibusiso Molimi - New Booking Inquiry">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_replyto" value="email">
+                <input type="hidden" name="_next" value="https://sibusisomolimi.co.za/thank-you.html">
+                
                 <div>
-                  <input type="text" class="form-control border-bottom border-dark" id="formGroupExampleInput"
-                    placeholder="Your Name">
+                  <input type="text" name="Full Name" class="form-control border-bottom border-dark" id="formGroupExampleInput"
+                    placeholder="Your Name" required>
                 </div>
                 <div>
-                  <input type="email" class="form-control border-bottom border-dark" id="exampleInputEmail1"
-                    placeholder="Email Address" aria-describedby="emailHelp">
+                  <input type="email" name="Email" class="form-control border-bottom border-dark" id="exampleInputEmail1"
+                    placeholder="Email Address" aria-describedby="emailHelp" required>
                 </div>
                 <div>
-                  <textarea class="form-control border-bottom border-dark" id="exampleFormControlTextarea1"
-                    placeholder="Tell us about your event — type, date, audience size, and what you need from Sibusiso" rows="3"></textarea>
+                  <textarea name="Event Details" class="form-control border-bottom border-dark" id="exampleFormControlTextarea1"
+                    placeholder="Tell us about your event — type, date, audience size, and what you need from Sibusiso" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn w-100 justify-content-center">
                   <span class="btn-text" style="color: #fff;">Send enquiry</span>
@@ -1099,8 +1107,8 @@
           <div class="d-flex flex-column gap-8 pe-xl-5">
             <h2 class="mb-0 text-white">Ready to take your event to the next level?</h2>
             <div class="d-flex flex-column gap-2">
-              <a href="mailto:info@wtgmediahouse.com" class="link-hover hstack gap-3 text-white fs-5">
-<iconify-icon icon="lucide:arrow-up-right" class="fs-7" style="color: white !important;"></iconify-icon>                info@wtgmediahouse.com
+              <a href="mailto:sibusiso@tsoha-ed.co.za" class="link-hover hstack gap-3 text-white fs-5">
+<iconify-icon icon="lucide:arrow-up-right" class="fs-7" style="color: white !important;"></iconify-icon>                 sibusiso@tsoha-ed.co.za 
               </a>
               <a href="tel:0720664925" class="link-hover hstack gap-3 text-white fs-5">
                 <iconify-icon icon="lucide:phone" class="fs-7" style="color: white !important;"></iconify-icon>
@@ -1113,7 +1121,7 @@
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
             <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-            <li><a class="link-hover fs-5 text-white" href="projects.html">Events</a></li>
+            <li><a class="link-hover fs-5 text-white" href="projects.html">Trusted Partners</a></li>
           </ul>
         </div>
         <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
@@ -1160,6 +1168,24 @@
       }, { threshold: 0.15 });
       items.forEach(function (el) { obs.observe(el); });
     })();
+  </script>
+
+  <!-- Visual feedback for form submission -->
+  <script>
+    var bookingForm = document.querySelector('.get-in-touch form');
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function(e) {
+        var submitBtn = this.querySelector('button[type="submit"]');
+        var originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="btn-text" style="color: #fff;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>';
+        submitBtn.disabled = true;
+        
+        setTimeout(function() {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
+      });
+    }
   </script>
 
 </body>
